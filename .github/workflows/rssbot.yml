@@ -15,9 +15,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - uses: actions/setup-node@v3
-      with:
-        node-version: '16.x'
     - name: Set up Python Version
       uses: actions/setup-python@master
       with:
@@ -33,14 +30,8 @@ jobs:
       run: |
         cd robot
         python rss.py
-    - name: Commit
-      run: |
-        git config --global user.email hjjixx@hotmail.com
-        git config --global user.name mumumi
-        git add .
-        git commit -m "update" -a
-    - name: Push changes
-      uses: ad-m/github-push-action@master
+    - name: Github commit and push
+      uses: actions-js/push@master
       with:
         branch: main
         github_token: ${{ secrets.TOKEN }}
