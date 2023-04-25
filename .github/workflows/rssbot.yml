@@ -3,8 +3,8 @@ name: DingDingRssBot
 
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: '30 8 * * *'
+  schedule:
+    - cron: '30 8 * * *'
 
 permissions:
   contents: write
@@ -28,8 +28,8 @@ jobs:
         pip install -r requirements.txt
     - name: send rss
       env:
-        DD_WEBHOOK: ${{ secrets.webhook }}
-        DD_SECRET: ${{ secrets.secret }}
+        DD_WEBHOOK: ${{ secrets.WEBHOOK }}
+        DD_SECRET: ${{ secrets.SECRET }}
       run: |
         cd robot
         python rss.py
