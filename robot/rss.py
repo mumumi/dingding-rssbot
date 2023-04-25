@@ -57,7 +57,7 @@ class RssRobot:
         return post_cards
 
     def is_not_sended(self, url):
-        return url not in self.sended_urls()
+        return url not in self.sended_urls
 
     def is_today(self, entry):
         return dateparser.parse(entry['updated']).date() == datetime.today().date()
