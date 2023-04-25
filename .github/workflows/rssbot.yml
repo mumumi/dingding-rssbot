@@ -3,7 +3,7 @@ name: DingDingRssBot
 
 on:
   schedule:
-    - cron: '5 10 * * *'
+    - cron: '13 2 * * *'
     
 jobs:
   build:
