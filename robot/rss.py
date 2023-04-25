@@ -19,8 +19,7 @@ import os
 class RssRobot:
     def __init__(self):
         # 说明文档的效果图中的 post_cover
-        self.post_cover = "https://leetao.zhubai.love/api/wechat/miniprogram_qrcode?page=pages%2Fpublication%2Fpublication&publication_id=2170089804120211456&scene=token%3Dleetao&width=200"
-        self.robot = DingtalkChatbot(
+        self.post_cover = ""
             os.environ.get("DD_WEBHOOK"),
             pc_slide=True, secret=os.environ.get("DD_SECRET"))
         self.remove_old_history()
