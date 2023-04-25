@@ -33,8 +33,14 @@ jobs:
       run: |
         cd robot
         python rss.py
-    - name: Github commit and push
-      uses: actions-js/push@master
+    - name: Commit
+      run: |
+        git config --global user.email hjjixx@hotmail.com
+        git config --global user.name mumumi
+        git add .
+        git commit -m "update" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
         branch: main
         github_token: ${{ secrets.TOKEN }}
