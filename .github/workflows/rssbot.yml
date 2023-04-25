@@ -34,7 +34,7 @@ jobs:
         cd robot
         python rss.py
     - name: Github commit and push
-      uses: Smart-Transportation/push@master
+      uses: actions-js/push@master
       with:
         branch: main
         github_token: ${{ secrets.TOKEN }}
