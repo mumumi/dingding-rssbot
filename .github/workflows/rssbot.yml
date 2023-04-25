@@ -2,13 +2,25 @@
 name: DingDingRssBot
 
 on:
-  schedule:
-    - cron: '13 2 * * *'
-    
+  workflow_dispatch:
+#  schedule:
+#    - cron: '0 9 * * *'
+
+env:
+  TZ: Asia/Shanghai
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Set Timezone
+      uses: szenius/set-timezone@v1.2
+    - name: Check the current timezone database
+      run: |
+        ls /usr/share/zoneinfo
+        echo "---"
+        date
+        echo "---"
     - name: 'Checkout codes'
       uses: actions/checkout@v2
     - name: Set up Python Version
