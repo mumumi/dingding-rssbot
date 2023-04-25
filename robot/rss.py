@@ -20,6 +20,7 @@ class RssRobot:
     def __init__(self):
         # 说明文档的效果图中的 post_cover
         self.post_cover = ""
+        self.robot = DingtalkChatbot(
             os.environ.get("DD_WEBHOOK"),
             pc_slide=True, secret=os.environ.get("DD_SECRET"))
         self.remove_old_history()
