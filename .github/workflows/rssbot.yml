@@ -2,9 +2,12 @@
 name: DingDingRssBot
 
 on:
-#  workflow_dispatch:
-  schedule:
-    - cron: '30 8 * * *'
+  workflow_dispatch:
+#  schedule:
+#    - cron: '30 8 * * *'
+
+permissions:
+  contents: write
 
 env:
   TZ: Asia/Shanghai
