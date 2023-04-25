@@ -13,14 +13,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Check the current timezone database
-      run: |
-        ls /usr/share/zoneinfo
-        echo "---"
-        date
-        echo "---"
     - name: Checkout
       uses: actions/checkout@master
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16'
     - name: Set up Python Version
       uses: actions/setup-python@master
       with:
