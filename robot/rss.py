@@ -19,7 +19,7 @@ import os
 class RssRobot:
     def __init__(self):
         # 说明文档的效果图中的 post_cover
-        self.post_cover = "https://baotangguo.cn:8081/"
+        self.post_cover = "https://api.dujin.org/bing/1366.php"
         self.robot = DingtalkChatbot(
             os.environ.get("DD_WEBHOOK"),
             pc_slide=True, secret=os.environ.get("DD_SECRET"))
@@ -57,7 +57,7 @@ class RssRobot:
         return post_cards
 
     def is_not_sended(self, url):
-        return url not in self.sended_urls
+        return url not in self.sended_urls()
 
     def is_today(self, entry):
         return dateparser.parse(entry['updated']).date() == datetime.today().date()
