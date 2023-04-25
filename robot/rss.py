@@ -56,8 +56,8 @@ class RssRobot:
             History.bulk_create(post_urls, batch_size=100)
         return post_cards
 
-    def is_not_sended(self, link):
-        return link not in self.sended_urls
+    def is_not_sended(self, entry):
+        return entry.link not in self.sended_urls
 
     def is_today(self, entry):
         return dateparser.parse(entry['updated']).date() == datetime.today().date()
